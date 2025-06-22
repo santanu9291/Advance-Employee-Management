@@ -17,7 +17,7 @@ const Attendance = () => {
   const fetchAttendanceRecords = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://localhost:8080/api/attendance/admin/all', {
+      const response = await axios.get('https://advance-employee-management.onrender.com/api/attendance/admin/all', {
         withCredentials: true,
       });
       setAttendanceRecords(response.data.records);
@@ -31,7 +31,7 @@ const Attendance = () => {
   const fetchUsers = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:8080/api/admin/employees', {
+      const response = await axios.get('https://advance-employee-management.onrender.com/api/admin/employees', {
         headers: { Authorization: `Bearer ${token}` },
         withCredentials: true,
       });
@@ -48,7 +48,7 @@ const Attendance = () => {
   setSingleAttendance(null);
 
   try {
-    const response = await axios.get(`http://localhost:8080/api/attendance/admin/${id}`, {
+    const response = await axios.get(`https://advance-employee-management.onrender.com/api/attendance/admin/${id}`, {
       withCredentials: true,
     });
 

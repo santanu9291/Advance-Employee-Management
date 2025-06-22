@@ -9,7 +9,7 @@ const EmployeeOverview = ({ setActiveSection }) => {
     const fetchProfile = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await fetch("http://localhost:8080/api/employee/profile", {
+        const res = await fetch("https://advance-employee-management.onrender.com/api/employee/profile", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

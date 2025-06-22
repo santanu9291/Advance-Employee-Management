@@ -23,7 +23,7 @@ const Salary = () => {
   const fetchUsers = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:8080/api/admin/employees", {
+      const res = await axios.get("https://advance-employee-management.onrender.com/api/admin/employees", {
         headers: { Authorization: `Bearer ${token}` },
         withCredentials: true,
       });
@@ -35,7 +35,7 @@ const Salary = () => {
 
   const fetchSalaries = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/api/salary/all", {
+      const res = await axios.get("https://advance-employee-management.onrender.com/api/salary/all", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -58,7 +58,7 @@ const Salary = () => {
 
   const handleSubmit = async () => {
     try {
-      const res = await axios.post("http://localhost:8080/api/salary/create", form, {
+      const res = await axios.post("https://advance-employee-management.onrender.com/api/salary/create", form, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -94,7 +94,7 @@ const Salary = () => {
   const handleUpdateSubmit = async () => {
     try {
       const res = await axios.put(
-        `http://localhost:8080/api/salary/update/${editingSalary}`,
+        `https://advance-employee-management.onrender.com/api/salary/update/${editingSalary}`,
         {
           basicSalary: Number(editForm.basicSalary),
           bonus: Number(editForm.bonus),

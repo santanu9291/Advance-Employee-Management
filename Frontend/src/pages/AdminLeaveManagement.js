@@ -10,7 +10,7 @@ export default function LeaveManagement() {
   const fetchLeaves = async () => {
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.get('http://localhost:8080/api/leave/all', {
+      const res = await axios.get('https://advance-employee-management.onrender.com/api/leave/all', {
         headers: { Authorization: `Bearer ${token}` },
         withCredentials: true,
       });
@@ -26,7 +26,7 @@ export default function LeaveManagement() {
   const updateLeaveStatus = async (id, status) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.put(`http://localhost:8080/api/leave/update/${id}`, { status: status.toLowerCase() }, {
+      await axios.put(`https://advance-employee-management.onrender.com/api/leave/update/${id}`, { status: status.toLowerCase() }, {
         headers: { Authorization: `Bearer ${token}` },
         withCredentials: true,
       });

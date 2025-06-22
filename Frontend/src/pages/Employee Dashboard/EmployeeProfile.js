@@ -24,7 +24,7 @@ const Profile = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await fetch(
-        "http://localhost:8080/api/employee/profile",
+        "https://advance-employee-management.onrender.com/api/employee/profile",
         {
           method: "GET",
           headers: {
@@ -74,7 +74,7 @@ const Profile = () => {
       const token = localStorage.getItem("token");
       console.log("fdsfs");
       const response = await fetch(
-        "http://localhost:8080/api/employee/update-profile",
+        "https://advance-employee-management.onrender.com/api/employee/update-profile",
         {
           method: "POST",
           headers: {

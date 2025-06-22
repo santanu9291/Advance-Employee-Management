@@ -11,7 +11,7 @@ const Department = () => {
 
   const fetchDepartments = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/api/department/all", {
+      const res = await axios.get("https://advance-employee-management.onrender.com/api/department/all", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         withCredentials: true,
       });
@@ -30,7 +30,7 @@ const Department = () => {
     try {
       if (editMode) {
         await axios.put(
-          `http://localhost:8080/api/department/update/${selectedDept}`,
+          `https://advance-employee-management.onrender.com/api/department/update/${selectedDept}`,
           form,
           {
             headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -39,7 +39,7 @@ const Department = () => {
         );
         toast.success("Department updated");
       } else {
-        await axios.post("http://localhost:8080/api/department/create", form, {
+        await axios.post("https://advance-employee-management.onrender.com/api/department/create", form, {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
           withCredentials: true,
         });
@@ -63,7 +63,7 @@ const Department = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this department?")) return;
     try {
-      await axios.delete(`http://localhost:8080/api/department/delete/${id}`, {
+      await axios.delete(`https://advance-employee-management.onrender.com/api/department/delete/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         withCredentials: true,
       });
@@ -76,7 +76,7 @@ const Department = () => {
 
   const handleViewDetails = async (id) => {
     try {
-      const res = await axios.get(`http://localhost:8080/api/department/details/${id}`, {
+      const res = await axios.get(`https://advance-employee-management.onrender.com/api/department/details/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         withCredentials: true,
       });

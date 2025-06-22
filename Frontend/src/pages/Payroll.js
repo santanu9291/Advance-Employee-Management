@@ -28,7 +28,7 @@ function Payroll() {
   const fetchSalaries = async () => {
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.get('http://localhost:8080/api/payroll/all', {
+      const res = await axios.get('https://advance-employee-management.onrender.com/api/payroll/all', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -52,7 +52,7 @@ function Payroll() {
   const fetchUsers = async () => {
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.get('http://localhost:8080/api/admin/employees', {
+      const res = await axios.get('https://advance-employee-management.onrender.com/api/admin/employees', {
         headers: { Authorization: `Bearer ${token}` },
         withCredentials: true,
       });
@@ -61,7 +61,7 @@ function Payroll() {
       setError('Failed to fetch users');
     }
   };
-  
+
 
   const handleChange = (e) => {
     setFormData((prev) => ({
@@ -76,7 +76,7 @@ function Payroll() {
     setMessage('');
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.post('http://localhost:8080/api/payroll/create', formData, {
+      const res = await axios.post('https://advance-employee-management.onrender.com/api/payroll/create', formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',

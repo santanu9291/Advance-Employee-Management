@@ -22,7 +22,7 @@ const EmployeeAttendance = () => {
   useEffect(() => {
   const fetchTodayAttendance = async () => {
     try {
-      const res = await fetch("http://localhost:8080/api/employee/attendance/today", {
+      const res = await fetch("https://advance-employee-management.onrender.com/api/employee/attendance/today", {
         headers: {
           "Authorization": `Bearer ${token}`,
         },
@@ -97,7 +97,7 @@ const EmployeeAttendance = () => {
   setStatus("Present");
 
   try {
-   await fetch("http://localhost:8080/api/employee/attendance/checkin", {
+   await fetch("https://advance-employee-management.onrender.com/api/employee/attendance/checkin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -141,7 +141,7 @@ const handleCheckOut = async () => {
   };
 
   try {
-    await fetch("http://localhost:8080/api/employee/attendance/checkout", {
+    await fetch("https://advance-employee-management.onrender.com/api/employee/attendance/checkout", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

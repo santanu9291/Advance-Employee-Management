@@ -27,7 +27,7 @@ const EmployeeManagement = () => {
   // Fetch all employees
   const fetchEmployees = async () => {
     try {
-      const res = await fetch('http://localhost:8080/api/admin/employees', {
+      const res = await fetch('https://advance-employee-management.onrender.com/api/admin/employees', {
         method: 'GET',
         credentials: 'include',
       });
@@ -49,7 +49,7 @@ const EmployeeManagement = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this employee?")) return;
     try {
-      const res = await fetch(`http://localhost:8080/api/admin/employees/${id}`, {
+      const res = await fetch(`https://advance-employee-management.onrender.com/api/admin/employees/${id}`, {
         method: 'DELETE',
         credentials: 'include',
       });
@@ -67,7 +67,7 @@ const EmployeeManagement = () => {
 
   const handlePromote = async (id) => {
     try {
-      const res = await fetch(`http://localhost:8080/api/admin/employees/promote/${id}`, {
+      const res = await fetch(`https://advance-employee-management.onrender.com/api/admin/employees/promote/${id}`, {
         method: 'PUT',
         credentials: 'include',
       });
@@ -101,7 +101,7 @@ const EmployeeManagement = () => {
   const handleUpdateEmployee = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`http://localhost:8080/api/admin/employees/${editingEmployee}`, {
+      const res = await fetch(`https://advance-employee-management.onrender.com/api/admin/employees/${editingEmployee}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
@@ -127,7 +127,7 @@ const EmployeeManagement = () => {
   const handleCreateEmployee = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch('http://localhost:8080/api/admin/employees/create', {
+      const res = await fetch('https://advance-employee-management.onrender.com/api/admin/employees/create', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',

@@ -47,7 +47,7 @@ export default function LeaveRequestPage() {
 
     try {
       const token = localStorage.getItem('token');
-      await axios.post('http://localhost:8080/api/leave/apply', form, {
+      await axios.post('https://advance-employee-management.onrender.com/api/leave/apply', form, {
         withCredentials: true,
         headers: {
           Authorization: `Bearer ${token}`,
@@ -70,7 +70,7 @@ export default function LeaveRequestPage() {
  const fetchLeaveHistory = async () => {
   try {
     const token = localStorage.getItem('token');
-    const response = await axios.get('http://localhost:8080/api/leave/my', {
+    const response = await axios.get('https://advance-employee-management.onrender.com/api/leave/my', {
       withCredentials: true,
       headers: {
         Authorization: `Bearer ${token}`,

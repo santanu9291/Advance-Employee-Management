@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import fullWidthImage from '../assets/bg.png'; 
+import fullWidthImage from '../assets/bg.png';
 
 
 const Background = styled.div`
@@ -103,7 +103,7 @@ const SignupPage = () => {
     }
 
     try {
-      const res = await fetch('http://localhost:8080/api/auth/signup', {
+      const res = await fetch('https://advance-employee-management.onrender.com/api/auth/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include', // <-- important for cookies (if used)

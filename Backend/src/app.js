@@ -14,7 +14,7 @@ import employeeRoutes from './routes/employee.route.js';
 const app = express()
 
 app.use(cors({
-    origin: "http://localhost:3000", // my frontend
+    origin: "https://advance-employee-management-frontend-gixm.onrender.com", // my frontend
     credentials: true
   }))
 
